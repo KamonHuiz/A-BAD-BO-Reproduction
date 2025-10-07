@@ -4,7 +4,7 @@
     "abollo_trial":1,
     "abollo_lower_bound":0.001,
     "abollo_upper_bound":1.0,
-    "abollo_bo_iteration":[3],
+    "abollo_bo_iteration":[2],
     "abollo_sample_size":[2],
     "down_sample_size":0.05,
     "epochs":1,

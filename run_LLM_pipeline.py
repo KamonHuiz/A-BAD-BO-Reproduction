@@ -2,7 +2,7 @@ from LLM.BO import *
 import os,json
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-sub_tasks = ['informal_to_formal','negation']
+sub_tasks = ['informal_to_formal']
             #  'informal_to_formal', 'larger_animal', 'letters_list', 'taxonomy_animal', 'negation', 'num_to_verbal','antonyms', 'diff', 'first_word_letter',
             #  'active_to_passive', 'singular_to_plural', 'rhymes',
             #  'second_word_letter', 'sentence_similarity', 'sentiment', 'orthography_starts_with',
@@ -21,7 +21,7 @@ contamination_rate=param["contamination_rate"]
 epochs = param["epochs"]
 #Giảm epochs 3->1 
 #Giảm k 5->2
-#Giảm T 10->3
+#Giảm T 10->2
 #Giảm 
 # ABOLLO related parameters
 total_trials = param["abollo_trial"] # trials

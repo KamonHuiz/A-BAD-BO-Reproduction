@@ -159,16 +159,17 @@ class GPT_Forward(LLM):
         while response is None:
             try:
                 
-                client = openai.OpenAI(api_key="")
+                openai.api_key = os.getenv("OPENAI_API_KEY")
+
                 
                 for p in prompt:
-                    response = client.chat.completions.create(
+                    response = openai.ChatCompletion.create(
                     model="gpt-4o-mini",
                     messages=[
                         {"role": "user", "content": p},
                     ]
                     )
-                    result.append(response.choices[0].message.content)
+                    result.append(response["choices"][0]["message"]["content"])
                 # response = openai.Completion.create(
                 #     **config, prompt=prompt)
             except Exception as e:
@@ -221,9 +222,8 @@ class GPT_Forward(LLM):
         response = None
         while response is None:
             try:
-                openai.OpenAI().api_key = ""
-                response = openai.Completion.create(
-                    **config, prompt=text)
+                openai.api_key = os.getenv("OPENAI_API_KEY")
+                response = openai.Completion.create(**config,prompt=prompt)
             except Exception as e:
                 print(e)
                 print('Retrying...')
@@ -329,6 +329,7 @@ class GPT_Insert(LLM):
         response = None
         while response is None:
             try:
+                openai.api_key = os.getenv("OPENAI_API_KEY")
                 response = openai.Completion.create(
                     **config, prompt=prefix, suffix=suffix)
             except Exception as e:

@@ -18,6 +18,7 @@ from gpytorch.mlls import ExactMarginalLogLikelihood, SumMarginalLogLikelihood, 
 from botorch.optim import optimize_acqf
 import time
 
+
 sub_tasks = ['antonyms', 'diff', 'first_word_letter',
              'informal_to_formal', 'larger_animal', 'letters_list', 'taxonomy_animal', 'negation', 'num_to_verbal',
              'active_to_passive', 'singular_to_plural', 'rhymes',
@@ -282,9 +283,9 @@ def generate_all_data():
     ds.save_to_disk("instruction_induction/example_picker_data/" + "all_task_combined" + ".hf")
 
 def get_eval_data(task_name):
-    with open("instruction_induction/evaluation_data/input_" + task_name, "r") as fp:
+    with open("instruction_induction/evaluation_data/input_" + task_name+".json", "r") as fp:
         q = json.load(fp)
-    with open("instruction_induction/evaluation_data/output_" + task_name, "r") as fp:
+    with open("instruction_induction/evaluation_data/output_" + task_name+".json", "r") as fp:
         a = json.load(fp)
     return q,a
 
