@@ -1,0 +1,22 @@
+{
+    "data_generation_seed":99,
+    "perturbation_noise":0.3,
+    "noise_std":0.2,
+    "mnist_size":"small",
+    "abollo_trial":5,
+    "abollo_bound_size":5,
+    "abollo_bo_iteration":20,
+    "abollo_bo_iteration":[20],
+    "abollo_sample_size":[10],
+    "abollo_search_method":"nn_lookup",
+    "starting_seed":800,
+
+    "vanilla_bo_trial":5,
+    "vanilla_bo_iteration":200,
+    "vanilla_bo_bounds":[2],
+
+    "turbo_bo_bounds":[2],
+    "turbo_batch_size":1,
+
+    "grad_itr":600
+}
