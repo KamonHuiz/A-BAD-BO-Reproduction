@@ -49,6 +49,7 @@ for sample_k in samples:
                             sample_size=sample_k, epochs=epochs, contamination_rate=contamination_rate)
         results = np.array(loss_space_bo_all_trials)
         output_dir = "result/llm/" + str(task) + ".csv"
+        os.makedirs(os.path.dirname(output_dir), exist_ok=True)
         np.savetxt(output_dir, results)
 
 # turbo
