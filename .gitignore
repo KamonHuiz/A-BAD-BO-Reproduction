@@ -18,3 +18,4 @@ wandb/
 # Ignore Jupyter and Colab artifacts
 .ipynb_checkpoints/
 *.ipynb_save
+!automatic_prompt_engineer/experiments/evaluation/instruction_induction/
